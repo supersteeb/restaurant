@@ -4,11 +4,29 @@
     <title>SaigonRestaurant</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="container">
+  		<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="<%= root_path %>">Saigon Restaurant</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item"><a class="btn btn-default" href="<%= menu_path %>">Menu</a>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Contact us', contact_us_path, class: 'btn btn-default' %>
+    </li>
+
+  </ul>
+  <form class="form-inline pull-xs-right">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</nav>
+    	<%= yield %>
+  	</div>
   </body>
 </html>
+
